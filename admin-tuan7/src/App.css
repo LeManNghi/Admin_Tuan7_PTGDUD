@@ -12,35 +12,45 @@
     "menu content"
     "menu content";
   grid-template-columns: 1fr 3fr;
-  gap: 5px;
-  background-color: #2196F3;
-  padding: 5px;
+  gap: 2px;
+  background-color: #b6b8b9;
+  padding: 2px;
 }
 .container > div {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: #ffffff;
   padding: 10px;
 }
-.container > div.header {
+.header {
   grid-area: header;
   text-align: center;
-  
+  color: #f44b86;
+  font-size: 24px;
 }
-.container > div.menu {
+.header > h2{
+  float: left;
+}
+.header > div{
+  float: right;
+}
+.menu {
   grid-area: menu;
   display: flex;
   flex-direction: column;
 }
-.container > div.content {
+.content {
   grid-area: content;
 }
-.overview{
+.overview-header{
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+}
+.overview-items{
   display: flex;
 }
 .overview-item{
   margin: 5px;
   padding: 5px;
-  background-color: aliceblue;
-  width: 100px;
 }
 .dataTable{
   background-color: aliceblue;
