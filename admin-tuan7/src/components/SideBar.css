@@ -1,0 +1,13 @@
+.sidebar-footer{
+    background-color: #eff6ff;
+    padding: 20px;
+    border-radius: 7px;
+}
+.sidebar-footer > button{
+    background-color: white;
+    color: rgb(86, 153, 220);
+    border: 1px solid rgb(86, 153, 220);
+    padding: 8px 70px;
+    border-radius: 5px;
+    cursor: pointer;
+}
