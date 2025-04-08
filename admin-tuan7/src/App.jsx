@@ -1,9 +1,61 @@
 import { useState } from 'react'
 import { useEffect } from 'react'
+import DataTable from 'react-data-table-component'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import OverviewItem from './components/OverViewItem'
+
+
+const columns = [
+  {
+    cell: row => (
+      <input type="checkbox" onChange={() => {}} />
+    ),
+    maxWidth: "50px",
+  },
+  {
+    name: 'CUSTOMER NAME',
+    selector: row => row.customer_name,
+    cell: row => (
+      <div className='customer-name'>
+        <img src={row.avatar} alt=''/>
+        <span>{row.customer_name}</span>
+      </div>
+    ),
+    grow: 2,
+    sortable: true,
+  },
+  {
+    name: 'COMPANY',
+    selector: row => row.company,
+    sortable: true,
+  },
+  {
+    name: 'ORDER VALUE',
+    selector: row => row.order_value,
+    sortable: true,
+  },
+  {
+    name: 'ORDER DATE',
+    selector: row => row.order_date,
+    sortable: true,
+  },
+  {
+    name: 'STATUS',
+    selector: row => row.status,
+    cell: row => (
+      <span className={row.status}>{row.status}</span>
+    ),
+    sortable: true,
+  },
+  {
+    cell: row => (
+      <button><img src="./src/images/create.png" alt="" /></button>
+    ),
+    right: true,
+  },
+];
 
 function App() {
 
@@ -25,6 +77,18 @@ function App() {
 
     fetchReport();
   }, []);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const rowsPerPage = 6;
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const paginatedData = report.slice(
+    (currentPage - 1) * rowsPerPage,
+    currentPage * rowsPerPage
+  );
 
   return (
     <>
@@ -52,7 +116,7 @@ function App() {
        {/* Content */}
       <div className="content">
         <div className="overview">
-          <div className='overview-header'>
+          <div className='title'>
             <img src="./src/images/Squares four 1.png" alt="" />
             <span>Overview</span>
           </div>
@@ -69,21 +133,32 @@ function App() {
                 );
             })}
           </div>
-          
-          
         </div>
         <div className='dataTable'>
-          {report.map((detail) => {
-              return (
-                <div>
-                  <img src={detail.avatar} alt="" />
-                  <p>Name: {detail.customer_name}</p>
-                </div>
-                  
-              );
-          })}
-          DataTable
 
+          <div className='import-export'>
+            <button><img src="./src/images/Download.png" alt="" />Import</button>
+            <button><img src="./src/images/Move up.png" alt=""/>Export</button>
+          </div>
+
+          <div className='title'>
+            <img src="./src/images/Squares four 1.png" alt="" />
+            <span>Detailed Report</span>
+          </div>
+
+          {/* DataTable */}
+          <DataTable
+            columns={columns}
+            data={paginatedData}
+            pagination
+            paginationServer
+            paginationTotalRows={report.length}
+            paginationPerPage={rowsPerPage}
+            paginationComponentOptions={{ noRowsPerPage: true }}
+            onChangePage={handlePageChange}
+          />
+          <div className='result'>{report.length} results</div>
+          
         </div>
       </div>
     </div>
