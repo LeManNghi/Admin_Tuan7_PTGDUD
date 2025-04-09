@@ -1,0 +1,46 @@
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 90%;
+}
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+input, select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+}
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+}
+button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+button[type="cancel"] {
+    background-color: #8d8e90;
+    color: white;
+    cursor: pointer;
+}
+button[type="cancel"]:hover {
+    background-color: #646565;
+}
