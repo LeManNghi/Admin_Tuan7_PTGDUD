@@ -12,8 +12,6 @@
     "menu content";
   grid-template-columns: 1fr 3fr;
   gap: 2px;
-  background-color: #b6b8b9;
-  padding: 2px;
 }
 .container > div {
   background-color: #ffffff;
@@ -23,12 +21,15 @@
   grid-area: header;
   text-align: center;
   color: #f44b86;
-  font-size: 24px;
+  font-size: 20px;
+  height: 70px;
+  border-bottom: 2px solid #b6b8b9;
 }
 .menu {
   grid-area: menu;
   display: flex;
   flex-direction: column;
+  border-right: 2px solid #b6b8b9;
 }
 .content {
   grid-area: content;

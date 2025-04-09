@@ -2,6 +2,7 @@
     background-color: #eff6ff;
     padding: 20px;
     border-radius: 7px;
+    text-align: center;
 }
 .sidebar-footer > button{
     background-color: white;
@@ -11,3 +12,29 @@
     border-radius: 5px;
     cursor: pointer;
 }
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+li{
+    margin: 5px 0;
+    padding: 10px 0px;
+    border-radius: 5px;
+    background-color: #154576;
+}
+.nav-link {
+    background-color: #ffffff; /* màu nền mặc định */
+    color: #323436; /* màu chữ mặc định */
+    border-radius: 5px;
+    padding-left: 20px;
+    transition: 0.3s;
+}
+.nav-link > a > img {
+    margin-right: 10px;
+}
+.nav-link a{
+    text-decoration: none;
+    color: inherit;
+}
+  
