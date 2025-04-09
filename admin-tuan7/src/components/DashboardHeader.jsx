@@ -5,7 +5,6 @@ export default function DashboardHeader() {
         <div className="dashboard-header">
             <h2>Dashboard</h2>
             <div className="header-actions">
-                <img className='search' src="./src/images/Search.png" alt="" />
                 <input type="text" placeholder="Search" />
                 <img src="./src/images/Bell.png" alt="" />
                 <img src="./src/images/Question.png" alt="" />

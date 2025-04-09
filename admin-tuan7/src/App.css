@@ -65,6 +65,10 @@
   border: 1px solid #f44b86;
   margin: 5px;
 }
+.import-export > button:hover{
+  background-color: #f44b86;
+  color: white;
+}
 .import-export > button > img{
   margin-right: 7px;
 }

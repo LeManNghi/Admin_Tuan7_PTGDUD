@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import './EditModal.css';
 
 export default function EditModal({ user, onClose, onSave }) {
   const [formData, setFormData] = useState({
@@ -62,44 +63,10 @@ export default function EditModal({ user, onClose, onSave }) {
           </label>
           <div className="modal-buttons">
             <button type="submit">Save</button>
-            <button type="button" onClick={onClose}>Cancel</button>
+            <button type="cancel" onClick={onClose}>Cancel</button>
           </div>
         </form>
       </div>
-
-      <style>{`
-        .modal-overlay {
-          position: fixed;
-          top: 0; left: 0; right: 0; bottom: 0;
-          background: rgba(0, 0, 0, 0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 1000;
-        }
-        .modal-content {
-          background: #fff;
-          padding: 20px;
-          border-radius: 12px;
-          width: 400px;
-          max-width: 90%;
-        }
-        form label {
-          display: block;
-          margin-bottom: 10px;
-        }
-        input, select {
-          width: 100%;
-          padding: 6px;
-          margin-top: 4px;
-        }
-        .modal-buttons {
-          display: flex;
-          justify-content: flex-end;
-          gap: 10px;
-          margin-top: 15px;
-        }
-      `}</style>
     </div>
   );
 }

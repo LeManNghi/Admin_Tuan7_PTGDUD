@@ -15,8 +15,13 @@
 .header-actions input {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #f3f3f3;
     margin-left: 10px;
+    background: url('./src/images/Search.png') no-repeat left center;
+    background-size: 20px;
+    background-color: #f3f3f3;
+    padding-left: 30px;
+    width: 250px;
 }
 .header-actions input::placeholder {
     color: #ccc;
